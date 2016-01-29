@@ -1,0 +1,101 @@
+<html>
+<title>abc toilets</title>
+<body>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+</p>
+<div id="map" style="width: 800px; height: 800px;"> </div>
+<p>
+<script type="text/javascript">// <![CDATA[
+var abc_st = [
+[-12.464276,130.844421,"105.7 ABC Darwin",-14.89925696,141.6195136,"CDEP Office",742.5470914040322],
+[-34.170957,140.750731,"1062 ABC Riverland",-34.91564406,139.3114219,"Mary Ann Reserve",96.73124790143054],
+[-37.562389,143.853169,"107.9 ABC Ballarat",-37.6342568,144.7253263,"Diggers Rest Station",48.00191868428948],
+[-37.824908,140.782210891,"1161 ABC South East",-37.6342568,144.7253263,"Diggers Rest Station",215.8629969584697],
+[-32.92605,151.757412,"1233 ABC Newcastle",-33.6880866,150.9311172,"Ironbark Ridge Reserve",71.05405154469007],
+[-34.719869,135.857277,"1485 ABC Eyre Peninsula & West Coast ",-34.91564406,139.3114219,"Mary Ann Reserve",196.3880958980475],
+[-27.4763,153.0205,"612 ABC Brisbane",-26.40887435,153.05121827,"Reserve Seacove Court",73.77614170325877],
+[-19.256418,146.821526,"630 ABC North Queensland",-24.42601496,145.4683698,"Memorial Park",367.56511887942054],
+[-33.190464,138.008891,"639 ABC North and West ",-34.91564406,139.3114219,"Mary Ann Reserve",140.5946808958874],
+[-33.882123,151.20168,"702 ABC Sydney",-33.97942512,151.0982179,"Poulton Park",8.96532331936168],
+[-31.951983,115.873146,"720 ABC Perth",-32.10752808,116.9308223,"Lukin Street",62.878718556166035],
+[-37.823692,144.966584,"774 ABC Melbourne",-37.6342568,144.7253263,"Diggers Rest Station",18.57767786512634],
+[-23.711368,133.875999,"783 ABC Alice Springs",-24.42601496,145.4683698,"Memorial Park",732.7667949057429],
+[-34.887844,138.613807,"891 ABC Adelaide",-34.91564406,139.3114219,"Mary Ann Reserve",39.577416251343614],
+[-26.658822,153.085963,"90.3 and 95.3 ABC Coast FM",-26.40887435,153.05121827,"Reserve Seacove Court",17.4027307156556],
+[-28.043094,153.434865,"91.7 ABC Coast FM",-28.62834519,153.0017754,"Helipad - Dr Reid Park",48.25794168037331],
+[-33.426938,151.341843,"92.5 ABC Central Coast",-33.6880866,150.9311172,"Ironbark Ridge Reserve",29.74599195818436],
+[-42.877787,147.332632,"936 ABC Hobart",-37.6342568,144.7253263,"Diggers Rest Station",387.4456179569123],
+[-34.422452,150.891992,"97.3 ABC Illawarra",-33.97942512,151.0982179,"Poulton Park",32.800320104613554],
+[-36.381171,145.39929,"97.7 ABC Goulburn Murray",-37.6342568,144.7253263,"Diggers Rest Station",94.22672334273119],
+[-31.955306,141.469783,"999 ABC Broken Hill",-34.91564406,139.3114219,"Mary Ann Reserve",239.40599166586938],
+[-23.380056,150.515724,"ABC Capricornia",-26.69259478,151.6531381,"Apex Park",239.6891049776744],
+[-36.74874,144.29188,"ABC Central Victoria",-37.6342568,144.7253263,"Diggers Rest Station",65.66981857976614],
+[-33.288293,149.10766,"ABC Central West",-33.6880866,150.9311172,"Ironbark Ridge Reserve",108.64285613645252],
+[-30.282279,153.128593,"ABC Coffs Coast",-28.62834519,153.0017754,"Helipad - Dr Reid Park",114.52999419543727],
+[-16.925397,145.775178,"ABC Far North",-14.89925696,141.6195136,"CDEP Office",309.5661011712348],
+[-38.109349,147.068418,"ABC Gippsland",-37.6342568,144.7253263,"Diggers Rest Station",131.9393729059277],
+[-30.747667,121.472302,"ABC Goldfields-Esperance",-32.10752808,116.9308223,"Lukin Street",283.72928335345233],
+[-36.112082,146.893163,"ABC Goulburn Murray",-37.6342568,144.7253263,"Diggers Rest Station",159.42194602084518],
+[-33.308727,117.344016,"ABC Great Southern",-33.33675967,116.7319695,"Basketball Courts",35.38861599143794],
+[-14.464568,132.264568,"ABC Katherine",-14.89925696,141.6195136,"CDEP Office",625.9325952887718],
+[-17.961033,122.2407,"ABC Kimberley",-32.10752808,116.9308223,"Lukin Street",1031.9469621833478],
+[-31.434259,152.908481,"ABC Mid North Coast",-33.6880866,150.9311172,"Ironbark Ridge Reserve",193.661694403885],
+[-28.773068,114.611265,"ABC Mid West and Wheatbelt",-32.10752808,116.9308223,"Lukin Street",268.6249967074735],
+[-34.183363,142.158122,"ABC Mildura - Swan Hill",-34.91564406,139.3114219,"Mary Ann Reserve",169.7087055937421],
+[-31.093987,150.933756,"ABC New England North West",-33.6880866,150.9311172,"Ironbark Ridge Reserve",179.23476503513803],
+[-28.80253,153.291963,"ABC North Coast",-28.62834519,153.0017754,"Helipad - Dr Reid Park",21.308304501990598],
+[-20.723053,139.493664,"ABC North West Queensland",-14.89925696,141.6195136,"CDEP Office",425.96595418290764],
+[-20.737262,116.85006,"ABC North West WA",-32.10752808,116.9308223,"Lukin Street",785.6241181787786],
+[-41.440209,147.146716,"ABC Northern Tasmania",-37.6342568,144.7253263,"Diggers Rest Station",292.87988211036895],
+[-35.105242,147.368937,"ABC Riverina",-33.6880866,150.9311172,"Ironbark Ridge Reserve",225.4386366493391],
+[-35.020683,117.884417,"ABC South Coast",-33.33675967,116.7319695,"Basketball Courts",133.69882830917112],
+[-36.674258,149.841853,"ABC South East",-33.97942512,151.0982179,"Poulton Park",199.20312354037063],
+[-38.382236,142.481041,"ABC South West Victoria",-37.6342568,144.7253263,"Diggers Rest Station",132.65463891380386],
+[-33.32552,115.63532,"ABC South West WA",-33.33675967,116.7319695,"Basketball Courts",63.31185126157055],
+[-27.560079,151.948439,"ABC Southern Queensland",-26.69259478,151.6531381,"Apex Park",62.62759149414499],
+[-21.14342,149.186845,"ABC Tropical North",-24.42601496,145.4683698,"Memorial Park",327.9068440629308],
+[-32.263323,150.888821,"ABC Upper Hunter",-33.6880866,150.9311172,"Ironbark Ridge Reserve",98.47202630133154],
+[-32.249537,148.601983,"ABC Western Plains",-33.6880866,150.9311172,"Ironbark Ridge Reserve",167.64458199470326],
+[-23.441048,144.249184,"ABC Western Queensland",-24.42601496,145.4683698,"Memorial Park",102.75844505885297],
+[-36.711625,142.200623,"ABC Western Victoria",-37.6342568,144.7253263,"Diggers Rest Station",152.91001151838424],
+[-24.866967,152.351068,"ABC Wide Bay",-26.40887435,153.05121827,"Reserve Seacove Court",115.11587554248338]
+];
+var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: new google.maps.LatLng(-23.711368,133.875999),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+var color1 = "#FE7569";
+var infowindow = new google.maps.InfoWindow();
+var marker, markert, i;
+for (i = 0; i < abc_st.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(abc_st[i][0], abc_st[i][1]),
+        icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        map: map
+      });
+      markert = new google.maps.Marker({
+        position: new google.maps.LatLng(abc_st[i][3], abc_st[i][4]),
+        icon: 'http://maps.google.com/mapfiles/ms/icons/toilets.png',
+        map: map
+      });
+google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+		infowindow.setContent('ABC Statoion: ' + abc_st[i][2] + '<br />Closest Toilet: ' + 
+			abc_st[i][5] + '<br /> Distance: ' + abc_st[i][6]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+google.maps.event.addListener(markert, 'click', (function(markert, i) {
+        return function() {
+		infowindow.setContent('Toilet: ' + 
+			abc_st[i][5]);
+          infowindow.open(map, markert);
+        }
+      })(markert, i));
+    }
+// ]]&gt;</script>
+
+</body>
+</html>
